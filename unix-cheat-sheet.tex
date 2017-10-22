@@ -21,56 +21,56 @@
 \titlespacing\subsection{0pt}{3pt}{0pt}
 \setlist{nosep}
 
-
 \newcommand{\cl}[1]{\texttt{#1}}
 \newcommand{\cv}[1]{\textit{\texttt{#1}}}
 \newcommand{\shcmd}[2]{\texttt{\textbf{#1} #2}}
 
 \begin{document}
-\begin{center}	\cl{The ultimate programming course cheat sheet for UNIX-like operating system newbies}
+\begin{center}
+    \cl{The ultimate programming course cheat sheet for UNIX-like operating system newbies}
 \end{center}
 \begin{multicols*}{3}
 \section*{\centering Directories and files}
 \subsection*{Concepts}
 \begin{itemize}
-	\item Files are organised in a directory tree/hierarchy
-	\item Everything is a file (e.g. keyboard, printers, ...)
-	\item Each process has access to the files \textit{stdin} (input),\\
-		  \textit{stdout} (buffered output), \textit{stderr} (unbuffered output)
-	\item Each process operates in a \textit{working directory}
-	\item Each user has a \textit{home directory}
+    \item Files are organised in a directory tree/hierarchy
+    \item Everything is a file (e.g. keyboard, printers, ...)
+    \item Each process has access to the files \textit{stdin} (input),\\
+          \textit{stdout} (buffered output), \textit{stderr} (unbuffered output)
+    \item Each process operates in a \textit{working directory}
+    \item Each user has a \textit{home directory}
 \end{itemize}
 \subsection*{Paths}
 \textit{Path} = Identifier for the location of file/directory
 \begin{itemize}
-	\item Paths consists of a parent directory list + file/directory
-	\item Files and directories are separated by a '\cl{/}
-	\item Directory paths may contain a trailing '\cl{/}'
+    \item Paths consists of a parent directory list + file/directory
+    \item Files and directories are separated by a '\cl{/}
+    \item Directory paths may contain a trailing '\cl{/}'
 \end{itemize}
 \textit{Absolute path} = Full location (first character = '\cl{/}')\\
 \textit{Relative path} = Relative location (first character $\neq$ '\cl{/}')
 \begin{tabular}{ll}
-\cl{.} 				& path to the directory itself\\
-\cl{..} 			& path to the parent directory\\
-\cl{/usr/bin/ls}	& example for an absolute file path\\
-\cl{/home/foo/} 	& example for an absolute directory path\\
-\cl{./a.out} 		& example for a relative file path\\
+\cl{.}              & path to the directory itself\\
+\cl{..}             & path to the parent directory\\
+\cl{/usr/bin/ls}    & example for an absolute file path\\
+\cl{/home/foo/}     & example for an absolute directory path\\
+\cl{./a.out}        & example for a relative file path\\
 \end{tabular}
 \subsection*{File system hierarchy}
 \begin{tabular}{ll}
-\cl{/}				& Root directory\\
-\cl{/bin}			& Essential command executables\\
-\cl{/dev} 			& Device files\\
-\cl{/etc} 			& System-wide configuration files\\
-\cl{/sbin} 			& Essential administrative executables\\
-\cl{/tmp} 			& Temporary files\\
-\cl{/usr} 			& System resources for users\\
-\cl{/usr/bin} 		& Command executables\\
-\cl{/usr/local}		& Site-local data\\
-\cl{/usr/sbin}		& Administrative executables\\
-\cl{/var} 			& Variable files\\
+\cl{/}          & Root directory\\
+\cl{/bin}       & Essential command executables\\
+\cl{/dev}       & Device files\\
+\cl{/etc}       & System-wide configuration files\\
+\cl{/sbin}      & Essential administrative executables\\
+\cl{/tmp}       & Temporary files\\
+\cl{/usr}       & System resources for users\\
+\cl{/usr/bin}   & Command executables\\
+\cl{/usr/local} & Site-local data\\
+\cl{/usr/sbin}  & Administrative executables\\
+\cl{/var}       & Variable files\\
 \end{tabular}
-\shcmd{man}{hier} (or \shcmd{man}{file-hierarchy} on recent linux distributions) to get a more detailed overview
+\shcmd{man}{hier} (or \shcmd{man}{file-hierarchy} on recent Linux distributions) to get a more detailed overview
 \section*{\centering Terminal (emulator)}
 \textit{Text terminal} = Computer interface for text entry/display\\
 \textit{Terminal emulator} = Application that emulates a \textit{text terminal} in a graphical environment\\
@@ -79,8 +79,8 @@ Examples for terminal emulators: \cl{xterm}, \cl{urxvt}, \cl{guake}
 
 \subsection*{Opening a terminal}
 \begin{tabular}{ll}
-Unity/GNOME 	& \keys{Ctrl + Alt + T}\\
-Mac OS 			& \keys{Cmd + \Space} $\rightarrow$ ``terminal'' $\rightarrow$ \keys{\return}\\
+Unity/GNOME     & \keys{Ctrl + Alt + T}\\
+Mac OS          & \keys{Cmd + \Space} $\rightarrow$ ``terminal'' $\rightarrow$ \keys{\return}\\
 Bash on Windows & \keys{Win + R} $\rightarrow$ ``bash'' $\rightarrow$ \keys{\return}
 \end{tabular}
 \section*{\centering Shell}
@@ -96,7 +96,7 @@ Example prompt in bash: \cl{[foo@bar /var/www]\$ }\\
 $\Rightarrow$ \textit{user} \cl{foo} is operating in the \textit{working directory} \cl{/var/www} at the computer with the \textit{host name} \cl{bar}
 \subsection*{Line editing}
 \begin{tabular}{ll}
-\keys{Ctrl + A}	& Go to the beginning of the line\\
+\keys{Ctrl + A} & Go to the beginning of the line\\
 \keys{Ctrl + E} & Go to the end of the line\\
 \keys{Ctrl + U} & Clean up to the beginning of the line\\
 \keys{Ctrl + K} & Clean up to the end of the line\\
@@ -113,60 +113,60 @@ The following characters can't be used directly:\\
 except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 \subsection*{Expressions}
 \begin{tabular}{ll}
-\cl{\textasciitilde} 		& \textit{home directory} of the current user\\
-\cl{*} 						& matches any character sequence\\
-\cl{?} 						& matches a single character\\
-\cl{\$\{}\cv{var}\cl{\}}	& value of the environment variable \cv{var}
+\cl{\textasciitilde}        & \textit{home directory} of the current user\\
+\cl{*}                      & matches any character sequence\\
+\cl{?}                      & matches a single character\\
+\cl{\$\{}\cv{var}\cl{\}}    & value of the environment variable \cv{var}
 \end{tabular}
 
 \subsection*{Shell utilities}
 \begin{tabular}{ll}
-\shcmd{apropos}{text} 			& searches the manual pages for \cv{text}\\
-\shcmd{cat}{file} 				& prints the contents of \cv{file}\\
-\shcmd{cd}{dir} 				& changes the \textit{working directory} to \cv{dir}\\
-\shcmd{chmod}{mode file} 	    & changes permissions of \cv{file} to \cv{mode}\\
-\shcmd{cp}{src dst} 		    & copies the file/directory \cv{src} to \cv{dst}\\
-\shcmd{echo}{text} 			    & prints \cv{text}\\
-\shcmd{file}{file} 			    & determines the file type of \cv{file}\\
-\shcmd{find}{dir expr} 	        & finds files in \cv{dir} that match \cv{expr}\\
-\shcmd{grep}{expr file} 	    & searches for pattern \cv{expr} in \cv{file}\\
-\shcmd{ls}{dir} 				& list the entries in the directory \cv{dir}\\
-\shcmd{man}{cmd} 				& displays the manual for \cv{cmd}\\
-\shcmd{mkdir}{dir} 			    & creates the directory \cv{dir}\\
-\shcmd{mv}{src dst} 		    & moves/renames \cv{src} to \cv{dst}\\
-\shcmd{pwd}{} 					& prints the current \textit{working directory}\\
-\shcmd{rm}{file} 				& removes the file \cv{file}\\
-\shcmd{sort}{} 					& sorts lines of text\\
-\shcmd{touch}{file} 			& creates the empty file \cv{file}
+\shcmd{apropos}{text}       & searches the manual pages for \cv{text}\\
+\shcmd{cat}{file}           & prints the contents of \cv{file}\\
+\shcmd{cd}{dir}             & changes the \textit{working directory} to \cv{dir}\\
+\shcmd{chmod}{mode file}    & changes permissions of \cv{file} to \cv{mode}\\
+\shcmd{cp}{src dst}         & copies the file/directory \cv{src} to \cv{dst}\\
+\shcmd{echo}{text}          & prints \cv{text}\\
+\shcmd{file}{file}          & determines the file type of \cv{file}\\
+\shcmd{find}{dir expr}      & finds files in \cv{dir} that match \cv{expr}\\
+\shcmd{grep}{expr file}     & searches for pattern \cv{expr} in \cv{file}\\
+\shcmd{ls}{dir}             & list the entries in the directory \cv{dir}\\
+\shcmd{man}{cmd}            & displays the manual for \cv{cmd}\\
+\shcmd{mkdir}{dir}          & creates the directory \cv{dir}\\
+\shcmd{mv}{src dst}         & moves/renames \cv{src} to \cv{dst}\\
+\shcmd{pwd}{}               & prints the current \textit{working directory}\\
+\shcmd{rm}{file}            & removes the file \cv{file}\\
+\shcmd{sort}{}              & sorts lines of text\\
+\shcmd{touch}{file}         & creates the empty file \cv{file}
 \end{tabular}
 \subsection*{Input output redirection}
 \begin{tabular}{ll}
-\shcmd{\cv{cmd1}}{|} \shcmd{\cv{cmd2}}{} 	& starts \cv{cmd1} and \cv{cmd2} and redirects the\\
-		        			  				& output of \cv{cmd1} to the input of \cv{cmd2}\\
-\shcmd{\cv{cmd}}{> file} 	    			& starts \cv{cmd} and redirects its output to \cv{file},\\
-	        		       					& content of \cv{file} is completely overwritten\\
-\shcmd{\cv{cmd}}{>\null> file} 				& starts \cv{cmd} and redirects its output to \cv{file},\\
-        			    					& the output is append after content of \cv{file}\\
-\shcmd{\cv{cmd}}{< file}	    			& starts \cv{cmd} and redirects \cv{file} to its input
-					  
+\shcmd{\cv{cmd1}}{|} \shcmd{\cv{cmd2}}{}    & starts \cv{cmd1} and \cv{cmd2} and redirects the\\
+                                            & output of \cv{cmd1} to the input of \cv{cmd2}\\
+\shcmd{\cv{cmd}}{> file}                    & starts \cv{cmd} and redirects its output to \cv{file},\\
+                                            & content of \cv{file} is completely overwritten\\
+\shcmd{\cv{cmd}}{>\null> file}              & starts \cv{cmd} and redirects its output to \cv{file},\\
+                                            & the output is append after content of \cv{file}\\
+\shcmd{\cv{cmd}}{< file}                    & starts \cv{cmd} and redirects \cv{file} to its input
+                                          
 \end{tabular}
 \subsection*{Job control}
 \textit{Job} = Shell command and its associated process(es)
 \begin{itemize}
-	\item Each job has a job id and corresponding process ids
-	\item Jobs can run in the foreground or in the background 
-	\item The execution of a job can be temporarily suspended
+    \item Each job has a job id and corresponding process ids
+    \item Jobs can run in the foreground or in the background 
+    \item The execution of a job can be temporarily suspended
 \end{itemize}
 \begin{tabular}{ll}
-\shcmd{\cv{cmd}}{\&}	& starts \cv{cmd} as background job (id is printed)\\
-\shcmd{fg}{\%job} 		& puts the job \cv{job} in foreground\\
-\shcmd{bg}{\%job} 		& continues suspended job \cv{job} in background\\
-\shcmd{ps}{}			& prints the process ids of all active jobs\\
-\shcmd{kill}{pid} 		& terminates a process with the process id \cv{pid}\\
-\keys{Ctrl+S}	 		& suspends active job\\
-\keys{Ctrl+Q} 			& continues active job\\
-\keys{Ctrl+Z} 			& puts active job to background and suspends it\\
-\keys{Ctrl+C} 			& aborts the active job (most of the times)
+\shcmd{\cv{cmd}}{\&}    & starts \cv{cmd} as background job (id is printed)\\
+\shcmd{fg}{\%job}       & puts the job \cv{job} in foreground\\
+\shcmd{bg}{\%job}       & continues suspended job \cv{job} in background\\
+\shcmd{ps}{}            & prints the process ids of all active jobs\\
+\shcmd{kill}{pid}       & terminates a process with the process id \cv{pid}\\
+\keys{Ctrl+S}           & suspends active job\\
+\keys{Ctrl+Q}           & continues active job\\
+\keys{Ctrl+Z}           & puts active job to background and suspends it\\
+\keys{Ctrl+C}           & aborts the active job (most of the times)
 \end{tabular}
 \end{multicols*}
 \end{document}
