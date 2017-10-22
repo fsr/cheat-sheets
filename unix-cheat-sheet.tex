@@ -48,8 +48,7 @@
 	\item Directory paths may contain a trailing '\cl{/}'
 \end{itemize}
 \textit{Absolute path} = Full location (first character = '\cl{/}')\\
-\textit{Relative path} = Relative location (first character $\neq$ '\cl{/}')\\
-
+\textit{Relative path} = Relative location (first character $\neq$ '\cl{/}')
 \begin{tabular}{ll}
 \cl{.} 				& path to the directory itself\\
 \cl{..} 			& path to the parent directory\\
@@ -65,13 +64,13 @@
 \cl{/etc} 			& System-wide configuration files\\
 \cl{/sbin} 			& Essential administrative executables\\
 \cl{/tmp} 			& Temporary files\\
-\cl{/usr} 			& \textit{Secondary hierarchy} for system data\\
+\cl{/usr} 			& System resources for users\\
 \cl{/usr/bin} 		& Command executables\\
-\cl{/usr/local}		& \textit{Tertiary hierarchy} for site-local data\\
+\cl{/usr/local}		& Site-local data\\
 \cl{/usr/sbin}		& Administrative executables\\
 \cl{/var} 			& Variable files\\
 \end{tabular}
-Overview \shcmd{man}{hier} (and \shcmd{man}{file-hierarchy} on recent linux distributions)
+\shcmd{man}{hier} (or \shcmd{man}{file-hierarchy} on recent linux distributions) to get a more detailed overview
 \section*{\centering Terminal (emulator)}
 \textit{Text terminal} = Computer interface for text entry/display\\
 \textit{Terminal emulator} = Application that emulates a \textit{text terminal} in a graphical environment\\
@@ -85,7 +84,9 @@ Mac OS 			& \keys{Cmd + \Space} $\rightarrow$ ``terminal'' $\rightarrow$ \keys{\
 Bash on Windows & \keys{Win + R} $\rightarrow$ ``bash'' $\rightarrow$ \keys{\return}
 \end{tabular}
 \section*{\centering Shell}
-\textit{Unix shell} = User interface that accepts commands to operate a computer. On many systems \shcmd{man}{intro} tries to provide an introduction into basic shell usage.\\
+\textit{Unix shell} = User interface that accepts commands to operate a computer\\
+
+\shcmd{man}{intro} to get an introduction into basic shell usage\\
 
 Examples for shell programs: \cl{sh}, \cl{bash}, \cl{zsh}, \cl{fish}, \cl{ksh}
 \subsection*{Prompt}
@@ -120,7 +121,7 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 
 \subsection*{Shell utilities}
 \begin{tabular}{ll}
-\shcmd{apropos}{text} 				& searches the man-pages for \cv{text}\\
+\shcmd{apropos}{text} 			& searches the manual pages for \cv{text}\\
 \shcmd{cat}{file} 				& prints the contents of \cv{file}\\
 \shcmd{cd}{dir} 				& changes the \textit{working directory} to \cv{dir}\\
 \shcmd{chmod}{mode file} 	    & changes permissions of \cv{file} to \cv{mode}\\
@@ -135,18 +136,18 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 \shcmd{mv}{src dst} 		    & moves/renames \cv{src} to \cv{dst}\\
 \shcmd{pwd}{} 					& prints the current \textit{working directory}\\
 \shcmd{rm}{file} 				& removes the file \cv{file}\\
-\shcmd{sort}{} 			& sorts lines of text\\
+\shcmd{sort}{} 					& sorts lines of text\\
 \shcmd{touch}{file} 			& creates the empty file \cv{file}
 \end{tabular}
 \subsection*{Input output redirection}
 \begin{tabular}{ll}
-\shcmd{\cv{cmd1}}{|} \shcmd{\cv{cmd2}}{} & starts \cv{cmd1} and \cv{cmd2} and redirects the\\
-		        			  	& output of \cv{cmd1} to the input of \cv{cmd2}\\
-\shcmd{\cv{cmd}}{> file} 	    & starts \cv{cmd} and redirects its output to \cv{file},\\
-	        		       		& content of \cv{file} is completely overwritten\\
-\shcmd{\cv{cmd}}{>\null> file} 	& starts \cv{cmd} and redirects its output to \cv{file},\\
-        			    		& the output is append after content of \cv{file}\\
-\shcmd{\cv{cmd}}{< file}	    & starts \cv{cmd} and redirects \cv{file} to its input
+\shcmd{\cv{cmd1}}{|} \shcmd{\cv{cmd2}}{} 	& starts \cv{cmd1} and \cv{cmd2} and redirects the\\
+		        			  				& output of \cv{cmd1} to the input of \cv{cmd2}\\
+\shcmd{\cv{cmd}}{> file} 	    			& starts \cv{cmd} and redirects its output to \cv{file},\\
+	        		       					& content of \cv{file} is completely overwritten\\
+\shcmd{\cv{cmd}}{>\null> file} 				& starts \cv{cmd} and redirects its output to \cv{file},\\
+        			    					& the output is append after content of \cv{file}\\
+\shcmd{\cv{cmd}}{< file}	    			& starts \cv{cmd} and redirects \cv{file} to its input
 					  
 \end{tabular}
 \subsection*{Job control}
@@ -157,15 +158,15 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 	\item The execution of a job can be temporarily suspended
 \end{itemize}
 \begin{tabular}{ll}
-\shcmd{\cv{cmd}}{\&} 	& starts \cv{cmd} as background job (id is printed)\\
-\shcmd{fg}{\%job} 	& puts the job \cv{job} in foreground\\
-\shcmd{bg}{\%job} 	& continues suspended job \cv{job} in background\\
-\shcmd{ps}{}		& prints the process ids of all active jobs\\
-\shcmd{kill}{pid} 	& terminates a process with the process id \cv{pid}\\
-\keys{Ctrl+S}	 	& suspends active job\\
-\keys{Ctrl+Q} 		& continues active job\\
-\keys{Ctrl+Z} 		& puts active job to background and suspends it\\
-\keys{Ctrl+C} 		& aborts the active job (most of the times)
+\shcmd{\cv{cmd}}{\&}	& starts \cv{cmd} as background job (id is printed)\\
+\shcmd{fg}{\%job} 		& puts the job \cv{job} in foreground\\
+\shcmd{bg}{\%job} 		& continues suspended job \cv{job} in background\\
+\shcmd{ps}{}			& prints the process ids of all active jobs\\
+\shcmd{kill}{pid} 		& terminates a process with the process id \cv{pid}\\
+\keys{Ctrl+S}	 		& suspends active job\\
+\keys{Ctrl+Q} 			& continues active job\\
+\keys{Ctrl+Z} 			& puts active job to background and suspends it\\
+\keys{Ctrl+C} 			& aborts the active job (most of the times)
 \end{tabular}
 \end{multicols*}
 \end{document}
