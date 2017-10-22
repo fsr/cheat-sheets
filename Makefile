@@ -6,7 +6,7 @@ LATEXMKFLAGS = -f
 TARGET = unix-cheat-sheet.pdf
 
 .PHONY: all
-all: unix-cheat-sheet.pdf
+all: $(TARGET)
 
 %.pdf: %.tex
 	$(LATEXMK) $(LATEXMKFLAGS) -pdflatex="$(LATEX) $(LATEXFLAGS) %O %S" \
