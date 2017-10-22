@@ -24,6 +24,7 @@
 
 \newcommand{\cl}[1]{\texttt{#1}}
 \newcommand{\cv}[1]{\textit{\texttt{#1}}}
+\newcommand{\shcmd}[2]{\texttt{\textbf{#1} #2}}
 
 \begin{document}
 \begin{center}	\cl{The ultimate programming course cheat sheet for UNIX-like operating system newbies}
@@ -50,25 +51,24 @@
 \textit{Relative path} = Relative location (first character $\neq$ '\cl{/}')\\
 
 \begin{tabular}{ll}
-\cl{/usr/bin/ls}	& example for an absolute file path\\
-\cl{/home/foo/} 	& example for an absolute directory path\\
-\cl{bin/a.out} 		& example for a relative file path\\
 \cl{.} 				& path to the \textit{working directory}\\
 \cl{..} 			& path to the parent directory\\
+\cl{/usr/bin/ls}	& example for an absolute file path\\
+\cl{/home/foo/} 	& example for an absolute directory path\\
+\cl{./a.out} 		& example for a relative file path\\
 \end{tabular}
 \subsection*{File system hierarchy}
 \begin{tabular}{ll}
-\cl{/}				& \textit{Primary hierarchy} and root directory\\
+\cl{/}				& Root directory\\
 \cl{/bin}			& Command binaries\\
 \cl{/dev} 			& Device files\\
 \cl{/etc} 			& System-wide configuration files\\
 \cl{/sbin} 			& System binaries\\
 \cl{/tmp} 			& Temporary files\\
-\cl{/usr} 			& \textit{Secondary hierarchy} for user data\\
+\cl{/usr} 			& System resources for users\\
 \cl{/usr/bin} 		& Non-essential command binaries\\
 \cl{/usr/include} 	& Standard include files\\
 \cl{/usr/lib} 		& System wide libraries\\
-\cl{/usr/local}		& \textit{Tertiary hierarchy} for local data\\
 \cl{/usr/sbin}		& Non-essential system binaries\\
 \cl{/var} 			& Variable files\\
 \end{tabular}
@@ -104,7 +104,7 @@ $\Rightarrow$ \textit{user} \cl{foo} is operating in the \textit{working directo
 \subsection*{Special characters}
 The following characters can't be used directly:\\
 \cl{| \& ; < > ( ) \$ \textasciigrave{} \textbackslash " * ? [ \# \textasciitilde{} = \%\\
-\keys{\space} \keys{\tab} \keys{\return}}\\
+\keys{\Space} \keys{\tab} \keys{\return}}\\
 
 \cl{\textbackslash} preserves the literal value of the following character\\
 \cl{' '} preserves the literal values of enquoted characters\\
@@ -120,32 +120,32 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 
 \subsection*{Shell utilities}
 \begin{tabular}{ll}
-\cl{cat} \cv{file} 				& prints the contents of \cv{file}\\
-\cl{cd} \cv{dir} 				& changes the \textit{working directory} to \cv{dir}\\
-\cl{chmod} \cv{mode} \cv{file} 	& changes permissions of \cv{file} to \cv{mode}\\
-\cl{cp} \cv{src} \cv{dst} 		& copies the file/directory \cv{src} to \cv{dst}\\
-\cl{echo} \cv{text} 			& prints \cv{text}\\
-\cl{file} \cv{file} 			& determines the file type of \cv{file}\\
-\cl{find} \cv{dir} \cv{expr} 	& finds files in \cv{dir} that match \cv{expr}\\
-\cl{grep} \cv{expr} \cv{file} 	& searches for pattern \cv{expr} in \cv{file}\\
-\cl{ls} \cv{dir} 				& list the entries in the directory \cv{dir}\\
-\cl{man} \cv{cmd} 				& displays the manual for \cv{cmd}\\
-\cl{mkdir} \cv{dir} 			& creates the directory \cv{dir}\\
-\cl{mv} \cv{src} \cv{dst} 		& moves/renames \cv{src} to \cv{dst}\\
-\cl{pwd} 						& prints the current \textit{working directory}\\
-\cl{rm} \cv{file} 				& removes the file \cv{file}\\
-\cl{rmdir} \cv{dir} 			& removes the directory \cv{dir}\\
-\cl{touch} \cv{file} 			& creates the empty file \cv{file}
+\shcmd{cat}{file} 				& prints the contents of \cv{file}\\
+\shcmd{cd}{dir} 				& changes the \textit{working directory} to \cv{dir}\\
+\shcmd{chmod}{mode file} 	    & changes permissions of \cv{file} to \cv{mode}\\
+\shcmd{cp}{src dst} 		    & copies the file/directory \cv{src} to \cv{dst}\\
+\shcmd{echo}{text} 			    & prints \cv{text}\\
+\shcmd{file}{file} 			    & determines the file type of \cv{file}\\
+\shcmd{find}{dir expr} 	        & finds files in \cv{dir} that match \cv{expr}\\
+\shcmd{grep}{expr file} 	    & searches for pattern \cv{expr} in \cv{file}\\
+\shcmd{ls}{dir} 				& list the entries in the directory \cv{dir}\\
+\shcmd{man}{cmd} 				& displays the manual for \cv{cmd}\\
+\shcmd{mkdir}{dir} 			    & creates the directory \cv{dir}\\
+\shcmd{mv}{src dst} 		    & moves/renames \cv{src} to \cv{dst}\\
+\shcmd{pwd}{} 					& prints the current \textit{working directory}\\
+\shcmd{rm}{file} 				& removes the file \cv{file}\\
+\shcmd{rmdir}{dir} 			    & removes the directory \cv{dir}\\
+\shcmd{touch}{file} 			& creates the empty file \cv{file}
 \end{tabular}
 \subsection*{Input output redirection}
 \begin{tabular}{ll}
-\cv{cmd1} | \cv{cmd2} 	& starts \cv{cmd1} and \cv{cmd2} and redirects the\\
-					  	& output of \cv{cmd1} to the input of \cv{cmd2}\\
-\cv{cmd} > \cv{file} 	& starts \cv{cmd} and redirects its output to \cv{file},\\
-						& content of \cv{file} is completely overwritten\\
-\cv{cmd} >\null> \cv{file} 	& starts \cv{cmd} and redirects its output to \cv{file},\\
-						& the output is append after content of \cv{file}\\
-\cv{cmd} < \cv{file}	& starts \cv{cmd} and redirects \cv{file} to its input
+\shcmd{\cv{cmd1}}{|} \shcmd{\cv{cmd2}}{} & starts \cv{cmd1} and \cv{cmd2} and redirects the\\
+		        			  	& output of \cv{cmd1} to the input of \cv{cmd2}\\
+\shcmd{\cv{cmd}}{> file} 	    & starts \cv{cmd} and redirects its output to \cv{file},\\
+	        		       		& content of \cv{file} is completely overwritten\\
+\shcmd{\cv{cmd}}{>\null> file} 	& starts \cv{cmd} and redirects its output to \cv{file},\\
+        			    		& the output is append after content of \cv{file}\\
+\shcmd{\cv{cmd}}{< file}	    & starts \cv{cmd} and redirects \cv{file} to its input
 					  
 \end{tabular}
 \subsection*{Job control}
@@ -156,11 +156,11 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 	\item The execution of a job can be temporarily suspended
 \end{itemize}
 \begin{tabular}{ll}
-\cv{cmd} \cl{\&} 	& starts \cv{cmd} as background job (id is printed)\\
-\cl{fg} \%\cv{job} 	& puts the job \cv{job} in foreground\\
-\cl{bg} \%\cv{job} 	& continues suspended job \cv{job} in background\\
-\cl{ps} 			& prints the process ids of all active jobs\\
-\cl{kill} \cv{pid} 	& terminates a process with the process id \cv{pid}\\
+\shcmd{\cv{cmd}}{\&} 	& starts \cv{cmd} as background job (id is printed)\\
+\shcmd{fg}{\%job} 	& puts the job \cv{job} in foreground\\
+\shcmd{bg}{\%job} 	& continues suspended job \cv{job} in background\\
+\shcmd{ps}{}		& prints the process ids of all active jobs\\
+\shcmd{kill}{pid} 	& terminates a process with the process id \cv{pid}\\
 \keys{Ctrl+S}	 	& suspends active job\\
 \keys{Ctrl+Q} 		& continues active job\\
 \keys{Ctrl+Z} 		& puts active job to background and suspends it\\
