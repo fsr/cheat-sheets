@@ -51,7 +51,7 @@
 \textit{Relative path} = Relative location (first character $\neq$ '\cl{/}')\\
 
 \begin{tabular}{ll}
-\cl{.} 				& path to the \textit{working directory}\\
+\cl{.} 				& path to the directory itself\\
 \cl{..} 			& path to the parent directory\\
 \cl{/usr/bin/ls}	& example for an absolute file path\\
 \cl{/home/foo/} 	& example for an absolute directory path\\
@@ -60,18 +60,18 @@
 \subsection*{File system hierarchy}
 \begin{tabular}{ll}
 \cl{/}				& Root directory\\
-\cl{/bin}			& Command binaries\\
+\cl{/bin}			& Essential command executables\\
 \cl{/dev} 			& Device files\\
 \cl{/etc} 			& System-wide configuration files\\
-\cl{/sbin} 			& System binaries\\
+\cl{/sbin} 			& Essential administrative executables\\
 \cl{/tmp} 			& Temporary files\\
-\cl{/usr} 			& System resources for users\\
-\cl{/usr/bin} 		& Non-essential command binaries\\
-\cl{/usr/include} 	& Standard include files\\
-\cl{/usr/lib} 		& System wide libraries\\
-\cl{/usr/sbin}		& Non-essential system binaries\\
+\cl{/usr} 			& \textit{Secondary hierarchy} for system data\\
+\cl{/usr/bin} 		& Command executables\\
+\cl{/usr/local}		& \textit{Tertiary hierarchy} for site-local data\\
+\cl{/usr/sbin}		& Administrative executables\\
 \cl{/var} 			& Variable files\\
 \end{tabular}
+Overview \shcmd{man}{hier} (and \shcmd{man}{file-hierarchy} on recent linux distributions)
 \section*{\centering Terminal (emulator)}
 \textit{Text terminal} = Computer interface for text entry/display\\
 \textit{Terminal emulator} = Application that emulates a \textit{text terminal} in a graphical environment\\
@@ -85,7 +85,7 @@ Mac OS 			& \keys{Cmd + \Space} $\rightarrow$ ``terminal'' $\rightarrow$ \keys{\
 Bash on Windows & \keys{Win + R} $\rightarrow$ ``bash'' $\rightarrow$ \keys{\return}
 \end{tabular}
 \section*{\centering Shell}
-\textit{Unix shell} = User interface that accepts commands to operate a computer\\
+\textit{Unix shell} = User interface that accepts commands to operate a computer. On many systems \shcmd{man}{intro} tries to provide an introduction into basic shell usage.\\
 
 Examples for shell programs: \cl{sh}, \cl{bash}, \cl{zsh}, \cl{fish}, \cl{ksh}
 \subsection*{Prompt}
@@ -120,6 +120,7 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 
 \subsection*{Shell utilities}
 \begin{tabular}{ll}
+\shcmd{apropos}{text} 				& searches the man-pages for \cv{text}\\
 \shcmd{cat}{file} 				& prints the contents of \cv{file}\\
 \shcmd{cd}{dir} 				& changes the \textit{working directory} to \cv{dir}\\
 \shcmd{chmod}{mode file} 	    & changes permissions of \cv{file} to \cv{mode}\\
@@ -134,7 +135,7 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 \shcmd{mv}{src dst} 		    & moves/renames \cv{src} to \cv{dst}\\
 \shcmd{pwd}{} 					& prints the current \textit{working directory}\\
 \shcmd{rm}{file} 				& removes the file \cv{file}\\
-\shcmd{rmdir}{dir} 			    & removes the directory \cv{dir}\\
+\shcmd{sort}{} 			& sorts lines of text\\
 \shcmd{touch}{file} 			& creates the empty file \cv{file}
 \end{tabular}
 \subsection*{Input output redirection}
