@@ -85,14 +85,15 @@ Bash on Windows & \keys{Win + R} $\rightarrow$ ``bash'' $\rightarrow$ \keys{\ret
 \end{tabular}
 \section*{\centering Shell}
 \textit{Unix shell} = User interface that accepts commands to operate a computer\\
-
 \shcmd{man}{intro} to get an introduction into basic shell usage\\
 
 Examples for shell programs: \cl{sh}, \cl{bash}, \cl{zsh}, \cl{fish}, \cl{ksh}
 \subsection*{Prompt}
 \textit{Prompt} = Text sequence that precedes each line that prompts the user to enter a command\\
+\begin{tabular}{ll}
+\cl{[foo@bar /var/www]\$ } & example prompt in bash\\
+\end{tabular}
 
-Example prompt in bash: \cl{[foo@bar /var/www]\$ }\\
 $\Rightarrow$ \textit{user} \cl{foo} is operating in the \textit{working directory} \cl{/var/www} at the computer with the \textit{host name} \cl{bar}
 \subsection*{Line editing}
 \begin{tabular}{ll}
@@ -107,16 +108,20 @@ The following characters have special meaning and sometimes they can't be used d
 \cl{| \& ; < > ( ) \$ \textasciigrave{} \textbackslash " ' * ? [ \# \textasciitilde{} = \%\\
 \keys{\Space} \keys{\tab} \keys{\return}}\\
 Their special meaning can be disabled:\\
-\cl{\textbackslash} preserves the literal value of the following character\\
-\cl{' '} preserves the literal values of enquoted characters\\
-\cl{" "} preserves the literal values of enquoted characters\\
-except the characters \cl{\textasciigrave{}  \$ \textbackslash}
-\subsection*{Expressions}
 \begin{tabular}{ll}
-\cl{\textasciitilde}        & \textit{home directory} of the current user\\
-\cl{*}                      & matches any character sequence\\
-\cl{?}                      & matches a single character\\
-\cl{\$\{}\cv{var}\cl{\}}    & value of the environment variable \cv{var}
+\cl{\textbackslash} & preserves the literal value of the following character\\
+\cl{' '}            & preserves the literal values of enquoted characters\\
+\cl{" "}            & like \cl{' '} but characters \cl{\textasciigrave{}  \$ \textbackslash} retain their meaning
+\end{tabular}
+\subsection*{Expansions}
+\begin{tabular}{ll}
+\cl{\textasciitilde}    & \textit{home directory} of the current user\\
+\cl{*}                  & matches any character sequence\\
+\cl{?}                  & matches a single character\\
+\cl{[...]}              & matches a character enclosed by the braces\\
+\cl{\$\{\cv{var}\cl\}}  & value of the environment variable \cv{var}\\
+\cl{\$(\cv{cmd})}       & output of \cv{cmd}\\
+\cl{\$((\cv{expr}))}    & result of the mathematical expression \cv{expr}
 \end{tabular}
 
 \subsection*{Shell utilities}
@@ -166,7 +171,8 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 \keys{Ctrl+S}           & suspends active job\\
 \keys{Ctrl+Q}           & continues active job\\
 \keys{Ctrl+Z}           & puts active job to background and suspends it\\
-\keys{Ctrl+C}           & aborts the active job (most of the times)
+\keys{Ctrl+C}           & aborts the active job (most of the times)\\
+\keys{Ctrl+D}           & sends an EOF character
 \end{tabular}
 \end{multicols*}
 \end{document}
