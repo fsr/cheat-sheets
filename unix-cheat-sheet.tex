@@ -114,8 +114,11 @@ except the characters \cl{\textasciigrave{}  \$ \textbackslash}
 \subsection*{Expressions}
 \begin{tabular}{ll}
 \cl{\textasciitilde}        & \textit{home directory} of the current user\\
+\cl{\textasciitilde foo}        & \textit{home directory} of user foo\\
 \cl{*}                      & matches any character sequence\\
 \cl{?}                      & matches a single character\\
+\cl{[\cv{abc}]}                  & matches characters \cv{a},\cv{b} or \cv{c}\\
+\cl{\{\cv{foo},\cv{bar}\}}            & matches words \cv{foo} or \cv{bar}\\
 \cl{\$\{}\cv{var}\cl{\}}    & value of the environment variable \cv{var}
 \end{tabular}
 
