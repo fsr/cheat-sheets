@@ -109,13 +109,15 @@ The following characters have special meaning and sometimes they can't be used d
 Their special meaning can be disabled:\\
 \cl{\textbackslash} preserves the literal value of the following character\\
 \cl{' '} preserves the literal values of enquoted characters\\
-\cl{" "} preserves the literal values of enquoted characters\\
-except the characters \cl{\textasciigrave{}  \$ \textbackslash}
+\cl{" "} like \cl{' '} but characters \cl{\textasciigrave{}  \$ \textbackslash} retain special meaning
 \subsection*{Expressions}
 \begin{tabular}{ll}
 \cl{\textasciitilde}        & \textit{home directory} of the current user\\
+\cl{\textasciitilde \cv{foo}}        & \textit{home directory} of user \cv{foo}\\
 \cl{*}                      & matches any character sequence\\
 \cl{?}                      & matches a single character\\
+\cl{[\cv{abc}]}                  & matches characters \cv{a},\cv{b} or \cv{c}\\
+\cl{\{\cv{foo},\cv{bar}\}}            & matches words \cv{foo} or \cv{bar}\\
 \cl{\$\{}\cv{var}\cl{\}}    & value of the environment variable \cv{var}
 \end{tabular}
 
