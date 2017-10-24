@@ -53,11 +53,11 @@
 \textit{Absolute path} = Full location (first character = '\cl{/}')\\
 \textit{Relative path} = Relative location (first character $\neq$ '\cl{/}')
 \begin{tabular}{ll}
-\cl{.}              & path to the directory itself\\
-\cl{..}             & path to the parent directory\\
-\cl{/usr/bin/ls}    & example for an absolute file path\\
-\cl{/home/foo/}     & example for an absolute directory path\\
-\cl{./a.out}        & example for a relative file path\\
+\cl{.}              & Path to the directory itself\\
+\cl{..}             & Path to the parent directory\\
+\cl{/usr/bin/ls}    & Example for an absolute file path\\
+\cl{/home/foo/}     & Example for an absolute directory path\\
+\cl{./a.out}        & Example for a relative file path\\
 \end{tabular}
 \subsection*{File system hierarchy}
 \begin{tabular}{ll}
@@ -94,10 +94,10 @@ Examples for shell programs: \cl{sh}, \cl{bash}, \cl{zsh}, \cl{fish}, \cl{ksh}
 \subsection*{Prompt}
 \textit{Prompt} = Text sequence that precedes each line that prompts the user to enter a command\\
 \begin{tabular}{ll}
-\cl{[foo@bar /var/www]\$ } & example prompt in bash\\
+\cl{[foo@bar /var/www]\$ } & Example prompt in bash\\
 \end{tabular}
 
-$\Rightarrow$ \textit{user} \cl{foo} is operating in the \textit{working directory} \cl{/var/www} at the computer with the \textit{host name} \cl{bar}
+$\Rightarrow$ \textit{User} \cl{foo} is operating in the \textit{working directory} \cl{/var/www} at the computer with the \textit{host name} \cl{bar}
 \subsection*{Line editing}
 \begin{tabular}{ll}
 \keys{Ctrl + A}/\keys{E} & Go to beginning/end of the line\\
@@ -112,50 +112,50 @@ The following characters have special meaning and sometimes they can't be used d
 \keys{\Space} \keys{\tab} \keys{\return}}\\
 Their special meaning can be disabled:\\
 \begin{tabular}{ll}
-\cl{\textbackslash} & preserves the literal value of the following character\\
-\cl{' '}            & preserves the literal values of enquoted characters\\
-\cl{" "}            & like \cl{' '} but characters \cl{\textasciigrave{}  \$ \textbackslash} retain their meaning
+\cl{\textbackslash} & Preserves the literal value of the following character\\
+\cl{' '}            & Preserves the literal values of enquoted characters\\
+\cl{" "}            & Like \cl{' '} but characters \cl{\textasciigrave{}  \$ \textbackslash} retain their meaning
 \end{tabular}
 \subsection*{Expansions}
 \begin{tabular}{ll}
-\cl{\textasciitilde}    & \textit{home directory} of the current user\\
-\cl{*}                  & matches any character sequence\\
-\cl{?}                  & matches a single character\\
-\cl{[...]}              & matches a character enclosed by the braces\\
-\cl{\$\{\cv{var}\cl\}}  & value of the environment variable \cv{var}\\
-\cl{\$(\cv{cmd})}       & output of \cv{cmd}\\
-\cl{\$((\cv{expr}))}    & result of the mathematical expression \cv{expr}
+\cl{\textasciitilde}    & \textit{Home directory} of the current user\\
+\cl{*}                  & Matches any character sequence\\
+\cl{?}                  & Matches a single character\\
+\cl{[...]}              & Matches a character enclosed by the braces\\
+\cl{\$\{\cv{var}\cl\}}  & Value of the environment variable \cv{var}\\
+\cl{\$(\cv{cmd})}       & Output of \cv{cmd}\\
+\cl{\$((\cv{expr}))}    & Result of the mathematical expression \cv{expr}
 \end{tabular}
 
 \subsection*{Shell utilities}
 \begin{tabular}{ll}
-\shcmd{apropos}{text}       & searches the manual pages for \cv{text}\\
-\shcmd{cat}{file}           & prints the contents of \cv{file}\\
-\shcmd{cd}{dir}             & changes the \textit{working directory} to \cv{dir}\\
-\shcmd{chmod}{prm file}     & changes permissions of \cv{file} to \cv{prm}\\
-\shcmd{cp}{src dst}         & copies the file/directory \cv{src} to \cv{dst}\\
-\shcmd{echo}{text}          & prints \cv{text}\\
-\shcmd{file}{file}          & determines the file type of \cv{file}\\
-\shcmd{find}{dir expr}      & finds files in \cv{dir} that match \cv{expr}\\
-\shcmd{grep}{expr file}     & searches for pattern \cv{expr} in \cv{file}\\
-\shcmd{ls}{dir}             & list the entries in the directory \cv{dir}\\
-\shcmd{man}{cmd}            & displays the manual for \cv{cmd}\\
-\shcmd{mkdir}{dir}          & creates the directory \cv{dir}\\
-\shcmd{mv}{src dst}         & moves/renames \cv{src} to \cv{dst}\\
-\shcmd{pwd}{}               & prints the current \textit{working directory}\\
-\shcmd{rm}{file}            & removes the file \cv{file}\\
-\shcmd{sort}{}              & sorts lines of text from input\\
-\shcmd{touch}{file}         & creates the empty file \cv{file}
+\shcmd{apropos}{text}       & Searches the manual pages for \cv{text}\\
+\shcmd{cat}{file}           & Prints the contents of \cv{file}\\
+\shcmd{cd}{dir}             & Changes the \textit{working directory} to \cv{dir}\\
+\shcmd{chmod}{prm file}     & Changes permissions of \cv{file} to \cv{prm}\\
+\shcmd{cp}{src dst}         & Copies the file/directory \cv{src} to \cv{dst}\\
+\shcmd{echo}{text}          & Prints \cv{text}\\
+\shcmd{file}{file}          & Determines the file type of \cv{file}\\
+\shcmd{find}{dir expr}      & Finds files in \cv{dir} that match \cv{expr}\\
+\shcmd{grep}{expr file}     & Searches for pattern \cv{expr} in \cv{file}\\
+\shcmd{ls}{dir}             & List the entries in the directory \cv{dir}\\
+\shcmd{man}{cmd}            & Displays the manual for \cv{cmd}\\
+\shcmd{mkdir}{dir}          & Creates the directory \cv{dir}\\
+\shcmd{mv}{src dst}         & Moves/renames \cv{src} to \cv{dst}\\
+\shcmd{pwd}{}               & Prints the current \textit{working directory}\\
+\shcmd{rm}{file}            & Removes the file \cv{file}\\
+\shcmd{sort}{}              & Sorts lines of text from input\\
+\shcmd{touch}{file}         & Creates the empty file \cv{file}
 \end{tabular}
 \subsection*{Input output redirection}
 \begin{tabular}{ll}
-\shcmd{\cv{cmd1}}{|} \shcmd{\cv{cmd2}}{}    & runs \cv{cmd1} and \cv{cmd2} and redirects the\\
+\shcmd{\cv{cmd1}}{|} \shcmd{\cv{cmd2}}{}    & Runs \cv{cmd1} and \cv{cmd2} and redirects the\\
                                             & output of \cv{cmd1} to the input of \cv{cmd2}\\
-\shcmd{\cv{cmd}}{> file}                    & runs \cv{cmd} and redirects output to \cv{file},\\
+\shcmd{\cv{cmd}}{> file}                    & Runs \cv{cmd} and redirects output to \cv{file},\\
                                             & content of \cv{file} is overwritten\\
-\shcmd{\cv{cmd}}{>\null> file}              & like \shcmd{}{>>} but appends output to \cv{file}\\
-\shcmd{\cv{cmd}}{< file}                    & runs \cv{cmd} and redirects \cv{file} to its input\\
-\shcmd{\cv{cmd}}{<<< text}                  & runs \cv{cmd} with input \cv{text}
+\shcmd{\cv{cmd}}{>\null> file}              & Like \shcmd{}{>>} but appends output to \cv{file}\\
+\shcmd{\cv{cmd}}{< file}                    & Runs \cv{cmd} and redirects \cv{file} to its input\\
+\shcmd{\cv{cmd}}{<<< text}                  & Runs \cv{cmd} with input \cv{text}
                                           
 \end{tabular}
 \subsection*{Job control}
@@ -166,16 +166,16 @@ Their special meaning can be disabled:\\
     \item The execution of a job can be temporarily suspended
 \end{itemize}
 \begin{tabular}{ll}
-\shcmd{\cv{cmd}}{\&}    & starts \cv{cmd} as background job (id is printed)\\
-\shcmd{fg}{\%job}       & puts the job \cv{job} in foreground\\
-\shcmd{bg}{\%job}       & continues suspended job \cv{job} in background\\
-\shcmd{jobs}{}          & prints job numbers of jobs in current terminal\\
-\shcmd{kill}{pid}       & terminates a process with the process id \cv{pid}\\
-\shcmd{ps}{}            & prints PIDs of processes in current terminal\\
-\keys{Ctrl+S}/\keys{Q}  & suspends/resumes active job\\
-\keys{Ctrl+Z}           & puts active job to background and suspends it\\
-\keys{Ctrl+C}           & aborts the active job (most of the times)\\
-\keys{Ctrl+D}           & sends an EOF character
+\shcmd{\cv{cmd}}{\&}    & Starts \cv{cmd} as background job (id is printed)\\
+\shcmd{fg}{\%job}       & Puts the job \cv{job} in foreground\\
+\shcmd{bg}{\%job}       & Continues suspended job \cv{job} in background\\
+\shcmd{jobs}{}          & Prints job numbers of jobs in current terminal\\
+\shcmd{kill}{pid}       & Terminates a process with the process id \cv{pid}\\
+\shcmd{ps}{}            & Prints PIDs of processes in current terminal\\
+\keys{Ctrl+S}/\keys{Q}  & Suspends/resumes active job\\
+\keys{Ctrl+Z}           & Puts active job to background and suspends it\\
+\keys{Ctrl+C}           & Aborts the active job (most of the times)\\
+\keys{Ctrl+D}           & Ends an EOF character
 \end{tabular}
 \end{multicols*}
 \end{document}
