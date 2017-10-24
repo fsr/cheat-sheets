@@ -167,15 +167,15 @@ Their special meaning can be disabled:\\
 \end{itemize}
 \begin{tabular}{ll}
 \shcmd{\cv{cmd}}{\&}    & Starts \cv{cmd} as background job (id is printed)\\
-\shcmd{fg}{\%job}       & Puts the job \cv{job} in foreground\\
-\shcmd{bg}{\%job}       & Continues suspended job \cv{job} in background\\
-\shcmd{jobs}{}          & Prints job numbers of jobs in current terminal\\
-\shcmd{kill}{pid}       & Terminates a process with the process id \cv{pid}\\
+\shcmd{fg}{\%jid}       & Puts job with id \cv{jid} in foreground\\
+\shcmd{bg}{\%jid}       & Continues job with id \cv{jid} in background\\
+\shcmd{jobs}{}          & Prints ids of jobs in current shell\\
+\shcmd{kill}{pid}       & Terminates process with the PID \cv{pid}\\
 \shcmd{ps}{}            & Prints PIDs of processes in current terminal\\
 \keys{Ctrl+S}/\keys{Q}  & Suspends/resumes active job\\
-\keys{Ctrl+Z}           & Puts active job to background and suspends it\\
-\keys{Ctrl+C}           & Aborts the active job (most of the times)\\
-\keys{Ctrl+D}           & Ends an EOF character
+\keys{Ctrl+Z}           & Puts job to background and suspends it\\
+\keys{Ctrl+C}           & Aborts job (most of the times)\\
+\keys{Ctrl+D}           & Sends an EOF character
 \end{tabular}
 \end{multicols*}
 \end{document}
