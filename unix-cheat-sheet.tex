@@ -166,10 +166,10 @@ Their special meaning can be disabled:\\
 \shcmd{\cv{cmd}}{\&}    & starts \cv{cmd} as background job (id is printed)\\
 \shcmd{fg}{\%job}       & puts the job \cv{job} in foreground\\
 \shcmd{bg}{\%job}       & continues suspended job \cv{job} in background\\
-\shcmd{ps}{}            & prints the process ids of all active jobs\\
+\shcmd{jobs}{}          & prints job numbers of jobs in current terminal\\
 \shcmd{kill}{pid}       & terminates a process with the process id \cv{pid}\\
-\keys{Ctrl+S}           & suspends active job\\
-\keys{Ctrl+Q}           & continues active job\\
+\shcmd{ps}{}            & prints PIDs of processes in current terminal\\
+\keys{Ctrl+S}/\keys{Q}  & suspends/resumes active job\\
 \keys{Ctrl+Z}           & puts active job to background and suspends it\\
 \keys{Ctrl+C}           & aborts the active job (most of the times)\\
 \keys{Ctrl+D}           & sends an EOF character
