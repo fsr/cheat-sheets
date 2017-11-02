@@ -9,5 +9,4 @@ TARGET = unix-cheat-sheet.pdf
 all: $(TARGET)
 
 %.pdf: %.tex
-	$(LATEXMK) $(LATEXMKFLAGS) -pdflatex="$(LATEX) $(LATEXFLAGS) %O %S" \
-		-pdf $<
+	$(LATEXMK) $(LATEXMKFLAGS) -pdf $<
